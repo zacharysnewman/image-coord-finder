@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Image Click Coordinates</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div class="container">
+		<!-- Buttons for predefined maps -->
+		<div class="image-buttons">
+			<button class="map-btn" data-image="https://www.setreadygame.com/wp-content/uploads/2021/01/Full-muldraugh-map-476x1024.jpg">Muldraugh</button>
+			<button class="map-btn" data-image="https://projectzomboid.com/blog/content/uploads/2017/04/rosewoodmap-716x1024.png">Rosewood</button>
+			<button class="map-btn" data-image="https://i.pinimg.com/originals/09/03/a8/0903a8e4ea76d79911e372f23dd80bcd.png">Riverside</button>
+			<button class="map-btn" data-image="https://i.pinimg.com/originals/f0/ce/7d/f0ce7d303566b5ad942e3f29295167ce.png">West Point</button>
+		</div>
+
+		<!-- Image Upload -->
+		<input type="file" id="imageUpload" accept="image/*">
+
+		<!-- Image Display -->
+		<div class="image-container" id="imageContainer">
+			<img id="image" style="display: none;">
+			<div id="redCrosshair" class="crosshair"></div>
+			<div id="blueCrosshair" class="crosshair"></div>
+		</div>
+		
+		<!-- Display Last Clicked Coordinates (Read-only) -->
+		<div class="display-coords">
+			<label>Last Clicked:</label>
+			<input type="text" id="clickedCoords" readonly>
+			<button id="copyButton">Copy</button>
+		</div>
+		
+		<!-- Manual Input for Blue Crosshair -->
+		<div class="manual-input">
+			<label for="xInput">X:</label>
+			<input type="number" id="xInput" class="xy-input">
+			<label for="yInput">Y:</label>
+			<input type="number" id="yInput" class="xy-input">
+			<button id="goButton">Go</button>
+		</div>
+	</div>
+	<script version="0.1" src="script.js"></script>
+</body>
+</html>
