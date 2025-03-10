@@ -1,0 +1,122 @@
+body {
+	font-family: Arial, sans-serif;
+	text-align: center;
+	margin: 20px;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* Ensure input fields only affect X/Y fields */
+.xy-input {
+	width: 50px;
+	text-align: center;
+}
+
+/* Remove width restriction from the file input */
+#imageUpload {
+	width: auto;
+	display: block;
+	margin-bottom: 10px;
+}
+
+.image-container {
+	position: relative;
+	display: inline-block;
+	border: 2px solid #333;
+	margin-top: 10px;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	cursor: crosshair;
+}
+
+/* General Crosshair Style (Hidden by Default) */
+.crosshair {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	pointer-events: none;
+	display: none;
+	transform: translate(-50%, -50%);
+}
+
+/* Red Crosshair (Last Clicked) */
+#redCrosshair::before,
+#redCrosshair::after {
+	content: "";
+	position: absolute;
+	background: red;
+}
+
+#redCrosshair::before {
+	width: 2px;
+	height: 20px;
+	left: 50%;
+	top: 0;
+	transform: translateX(-50%);
+}
+
+#redCrosshair::after {
+	width: 20px;
+	height: 2px;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+}
+
+/* Blue Crosshair (Manual Input) */
+#blueCrosshair::before,
+#blueCrosshair::after {
+	content: "";
+	position: absolute;
+	background: blue;
+}
+
+#blueCrosshair::before {
+	width: 2px;
+	height: 20px;
+	left: 50%;
+	top: 0;
+	transform: translateX(-50%);
+}
+
+#blueCrosshair::after {
+	width: 20px;
+	height: 2px;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+}
+
+/* Input & Button Styles */
+.display-coords, .manual-input {
+	margin-top: 10px;
+	display: flex;
+	gap: 5px;
+	align-items: center;
+}
+
+#clickedCoords {
+	width: 100px;
+	text-align: center;
+	border: 1px solid #ccc;
+	padding: 5px;
+	color: red;
+	font-weight: bold;
+}
+
+input {
+	width: 50px;
+	text-align: center;
+}
+
+button {
+	padding: 5px 10px;
+	cursor: pointer;
+}
